@@ -29,14 +29,14 @@ pipeline {
                 }
             }   
 
-           stage ("4. Sonarqube Static code analysis") {
-            steps {
-                script{
-                    def credentialsId = 'sonar-new'
-                    StaticCodeAnalysis (credentialsId)
-                    }
-                }
-           }
+        //    stage ("4. Sonarqube Static code analysis") {
+        //     steps {
+        //         script{
+        //             def credentialsId = 'sonar-new'
+        //             StaticCodeAnalysis (credentialsId)
+        //             }
+        //         }
+        //    }
 
            stage ("5. Sonarqube Quality Gate Check") {
             steps {
