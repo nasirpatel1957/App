@@ -6,7 +6,7 @@ pipeline {
        
         stage ("1. Git Checkout") {
             steps {
-            GitCheckout (
+            aGitCheckout (
                         branch: 'main',
                         url: 'https://github.com/nasirpatel1957/App.git'
                     )
@@ -16,7 +16,7 @@ pipeline {
          stage ("2. Maven Unit Testing") {
             steps {
                 script{
-                    MavenUnitTest ()
+                    bMavenUnitTest ()
                 }
             }
          }           
@@ -24,7 +24,7 @@ pipeline {
           stage ("3. Maven Integration Testing") {
             steps {
                 script{
-                    MavenIntegrationTest ()
+                    cMavenIntegrationTest ()
                     }
                 }
             }   
@@ -33,7 +33,7 @@ pipeline {
         //     steps {
         //         script{
         //             def credentialsId = 'sonar-new'
-        //             StaticCodeAnalysis (credentialsId)
+        //             dStaticCodeAnalysis (credentialsId)
         //             }
         //         }
         //    }
@@ -42,7 +42,7 @@ pipeline {
         //     steps {
         //         script{
         //             def credentialsId = 'sonar-new'
-        //             QualityGateCheck (credentialsId)
+        //             eQualityGateCheck (credentialsId)
         //             }
         //         }
         //     }  
@@ -50,7 +50,7 @@ pipeline {
            stage ("6. Maven Build") {
             steps {
                 script{
-                    MavenBuild ()
+                    fMavenBuild ()
                     }
                 }
             }  
