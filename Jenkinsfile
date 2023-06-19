@@ -2,6 +2,13 @@
 pipeline {
     agent any
     
+    parameters {
+        string(name: "ImageName", defaultValue: "nhp1993")
+        string(name: "AccountID", defaultValue: "606312200267")
+        string(name: "RegionName", defaultValue: "us-east-1")
+
+    }
+
     stages {
        
         stage ("1. Git Checkout") {
@@ -59,13 +66,13 @@ pipeline {
 }   
    
 
-    //        stage ("7. Docker Build") {
-    //         steps {
-    //             script{
-    //                 7.DockerBuild ()
-    //                 }
-    //             }
-    //         }  
+           stage ("7. Docker Build") {
+            steps {
+                script{
+                    gDockerBuild ("${params.ImageName}", "${params.AccountID}", "${params.RegionName}")
+                    }
+                }
+            }  
 
     //        stage ("8. Trivy Scan") {
     //         steps {
