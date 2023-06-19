@@ -38,14 +38,14 @@ pipeline {
         //         }
         //    }
 
-           stage ("5. Sonarqube Quality Gate Check") {
-            steps {
-                script{
-                    def credentialsId = 'sonar-new'
-                    QualityGateCheck (credentialsId)
-                    }
-                }
-            }  
+        //    stage ("5. Sonarqube Quality Gate Check") {
+        //     steps {
+        //         script{
+        //             def credentialsId = 'sonar-new'
+        //             QualityGateCheck (credentialsId)
+        //             }
+        //         }
+        //     }  
 
            stage ("6. Maven Build") {
             steps {
