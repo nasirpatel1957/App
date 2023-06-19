@@ -20,7 +20,8 @@ pipeline {
                 script{
                     2.MavenUnitTest ()
                 }
-            }           
+            }
+         }           
 
           stage ("3. Maven Integration Testing") {
             steps {
@@ -55,6 +56,10 @@ pipeline {
                     }
                 }
             }  
+
+    }
+}   
+   
 
     //        stage ("7. Docker Build") {
     //         steps {
@@ -108,6 +113,5 @@ pipeline {
     //                 }
     //             }
     //         }  
-
-        }
-    }
+    //     }
+    // }
