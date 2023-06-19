@@ -6,12 +6,10 @@ pipeline {
        
         stage ("1. Git Checkout") {
             steps {
-                script{
                     1.GitCheckout (
                         branch: 'main',
                         url: 'https://github.com/nasirpatel1957/App.git'
                     )
-                    }
                 }
             }
 
